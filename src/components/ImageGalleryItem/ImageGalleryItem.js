@@ -9,14 +9,17 @@ export class ImageGalleryItem extends Component {
     showModal: '',
   };
 
-  onToggleModal = (Image) => {
-    this.setState(prevState => ({
-    showModal: !prevState.showModal,
-    largeImageURL: '',
-  }));
-  if (Image) {
-    this.setState({ largeImageURL: Image, showModal: true });
-  }
+    onToggleModal = () => {
+    this.setState(prevState => ({ showModal: !prevState.showModal }));
+  };
+
+
+  onOpenModal = (event) => {
+    const largeImageURL = event.target.dataset.source;
+    if (largeImageURL) {
+      this.setState({ largeImageURL: largeImageURL});
+      this.onToggleModal();
+    }
   };
 
 
@@ -25,13 +28,11 @@ export class ImageGalleryItem extends Component {
     const {src, alt, largeImageURL} = this.props;
     return (
       <>
-      <Item>
-        <Img src={src} alt={alt} data-source={largeImageURL} />
+      <Item >
+        <Img src={src} alt={alt} data-source={largeImageURL} onClick={this.onOpenModal}/>
         </Item>
 
-      {showModal && (<Modal onToggleModal={this.onToggleModal}>
-        <Img src={src} alt={alt} data-source={largeImageURL} />
-        </Modal>)}
+      {showModal && (<Modal onToggleModal={this.onToggleModal} />)}
         </>
     )
   }
