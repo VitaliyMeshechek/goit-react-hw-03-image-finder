@@ -28,11 +28,14 @@ export class ImageGalleryItem extends Component {
     const {src, alt, largeImageURL} = this.props;
     return (
       <>
-      <Item >
-        <Img src={src} alt={alt} data-source={largeImageURL} onClick={this.onOpenModal}/>
+      <Item onClick={this.onOpenModal}>
+        <Img src={largeImageURL} alt={alt} data-source={largeImageURL} />
         </Item>
 
-      {showModal && (<Modal onToggleModal={this.onToggleModal} />)}
+      {showModal && (<Modal onToggleModal={this.onToggleModal} >
+        <Img src={src} alt={alt} data-source={largeImageURL} onClick={this.onOpenModal}/>
+        </Modal>)}
+
         </>
     )
   }

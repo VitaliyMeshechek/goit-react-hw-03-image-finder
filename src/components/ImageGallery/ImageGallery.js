@@ -56,10 +56,10 @@ export class ImageGallery extends Component {
     const showLoadMore = galleryPictures.length < total;
     return (<>
     <List>
-    {galleryPictures.map(({webformatURL, largeImageURL, tags, id}) => (
+    {galleryPictures.map(({largeImageURL, tags, id}) => (
         <ImageGalleryItem
         key={id}
-        src={webformatURL}
+        src={largeImageURL}
         alt={tags}
         largeImageURL={largeImageURL}
         />
