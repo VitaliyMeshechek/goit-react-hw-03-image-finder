@@ -19,11 +19,7 @@ export class App extends Component {
   state = {
     galleryPictures: [],
     searchName: '',
-    page: 1,
-    total: 0,
-    largeImageURL: '',
     isLoading: false,
-    showModal: false,
     error: null,
   }
 
@@ -40,7 +36,7 @@ export class App extends Component {
       <Searchbar onSubmit={this.handleSearchSubmit} />
       <Toaster toastOptions={{duration: 4000}}/>
       <ImageGallery searchName={searchName}
-      onClick={this.onOpenModal}
+      // onClick={this.onOpenModal}
       />
       {isLoading ? (
           <Grid
