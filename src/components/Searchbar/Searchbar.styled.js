@@ -1,4 +1,8 @@
+import { FcSearch } from "react-icons/fc";
+
 import styled from 'styled-components';
+
+
 export const Header = styled.header`
   top: 0;
   left: 0;
@@ -11,7 +15,7 @@ export const Header = styled.header`
   padding-right: 24px;
   padding-left: 24px;
   padding-top: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 20px;
   color: #fff;
   background-color: #3f51b5;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
@@ -53,4 +57,8 @@ export const Input = styled.input`
   font: inherit;
   font-size: 18px;
 }
+`;
+
+export const SearchIcon = styled(FcSearch)`
+
 `;

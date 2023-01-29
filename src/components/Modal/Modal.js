@@ -31,11 +31,10 @@ export class Modal extends Component {
       <ModalOverlay onClick={this.handleBackdropClick}>
         <ModalWindow>{this.props.children}</ModalWindow>
       </ModalOverlay>,
-      modalRoot,
+      modalRoot
     );
   }
 }
-
 
 Modal.propTypes = {
   children: PropTypes.node,
