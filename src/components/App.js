@@ -75,12 +75,8 @@ export class App extends Component {
     error: null,
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    const { value } = event.target.search;
-    this.reset();
-    // this.setState({searchName: ''})
-    console.log(value);
+
+  onSearchName = value => {
     this.setState({
       searchName: value,
       page: 1,
@@ -88,16 +84,7 @@ export class App extends Component {
       total: 0,
       error: null,
     });
-
-    if (!value.trim()) {
-      toast.error('The field should not be empty, please enter a name');
-      return;
-    }
-  };
-
-  reset = () => {
-    this.setState({ searchName: '' });
-  };
+  }
 
   async componentDidUpdate(_, prevState) {
     const { searchName, page } = this.state;
@@ -154,7 +141,7 @@ export class App extends Component {
     return (
       <WrapperContainer>
         <Toaster />
-        <Searchbar onSubmit={this.handleSubmit} />
+        <Searchbar onSubmit={this.onSearchName} />
         <ImageGallery
           onClick={this.onOpenModal}
           items={galleryPictures}
