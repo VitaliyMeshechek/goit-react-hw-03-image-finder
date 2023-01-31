@@ -16,14 +16,18 @@ export const ModalOverlay = styled.div`
 `;
 export const ModalWindow = styled.div`
 position: relative;
-  max-width: calc(100vw - 100px);
-  max-height: calc(100vh - 50px);
+  /* max-width: calc(100vw - 100px);
+  max-height: calc(100vh - 50px); */
+  width: 100%;
+  height: 100%;
+
 `;
 
 export const ContainerButtonIcon = styled.div`
 position: absolute;
 top: 5px;
 right: 5px;
+
 `;
 
 export const ButtonIcon = styled.button`

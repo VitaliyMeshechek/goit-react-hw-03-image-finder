@@ -167,7 +167,7 @@ export class App extends Component {
                 <CloseIcon size={50} fill="#ff4500" />
               </ButtonIcon>
             </ContainerButtonIcon>
-            <img src={largeImageURL} alt={imageAlt} />
+            <img src={largeImageURL} alt={imageAlt} width={1000} height={600}/>
           </Modal>
         )}
       </WrapperContainer>
